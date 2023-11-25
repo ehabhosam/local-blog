@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My Magazine</h1>
+    </header>
+    <div id="article"></div>
+    <a id="back-button" href="index.html">Back to all Articles</a>
+
+    <script src="index.js"></script>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get("id");
+      if (!id) {
+        window.location.href = "index.html";
+      }
+      const post = getPost(parseInt(id));
+      if (!post) {
+        window.location.href = "index.html";
+      }
+
+      const article = document.getElementById("article");
+      article.innerHTML = `
+        <h2>${post.title}</h2>
+        <img src="${post.imgSrc}" alt="${post.title}" />
+        <p>${post.body}</p>
+      `;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Article</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My Magazine</h1>
+    </header>
+    <main>
+      <h1>Write a new article</h1>
+      <form id="new-article-form">
+        <label for="title">Article Title</label>
+        <input type="text" id="title" name="title" required />
+        <label for="image">Image URL</label>
+        <input type="text" id="image" name="image" required />
+        <label for="body">Article Body</label>
+        <textarea id="body" name="body" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
